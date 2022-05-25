@@ -1,0 +1,25 @@
+<div class="ml-5">
+  <h2>Регистация</h2>
+
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "mb-2" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль", class: "mb-2" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Потдверждение пароля" %>
+    </div>
+
+    <div class="actions mt-2">
+      <%= f.submit "Войти", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
