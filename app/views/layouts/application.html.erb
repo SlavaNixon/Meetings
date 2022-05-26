@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>L57</title>
+    <title>Meetings</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,7 +17,7 @@
       <%= link_to "Meetings", root_path, class: "navbar-brand" %>
       
       <div class="ml-3">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav">
           <% unless user_signed_in? %>
             <li class="nav-item active">
               <%= link_to "Войти", new_user_session_path, class: "nav-link" %>
@@ -30,7 +30,7 @@
               <%= link_to "Мой профиль", user_path(current_user), class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <%= button_to "Выйти", destroy_user_session_path, class: "nav-link bg-danger rounded-circle border-0", method: 'delete' %>
+              <%= button_to "Выйти", destroy_user_session_path, class: "nav-link bg-danger", method: 'delete' %>
             </li>
           <% end %>
         </ul>
