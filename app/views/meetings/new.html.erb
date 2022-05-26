@@ -1,0 +1,6 @@
+<h1>Создание события</h1>
+<%= form_with url: meetings_path, method: :post, data: {turbo: false} do |form| %>
+  <%= form.label :query, "Search for:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>

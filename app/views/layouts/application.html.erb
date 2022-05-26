@@ -14,7 +14,7 @@
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-      <%= link_to "Meetings", root_path, class: "navbar-brand" %>
+      <%= link_to "Meetings", root_path, class: "navbar-brand mx-2" %>
       
       <div class="ml-3">
         <ul class="navbar-nav">
@@ -30,15 +30,18 @@
               <%= link_to "Мой профиль", user_path(current_user), class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <%= button_to "Выйти", destroy_user_session_path, class: "nav-link bg-danger", method: 'delete' %>
+              <%= button_to "Выйти", destroy_user_session_path, class: "nav-link bg-primary border-0", method: 'delete' %>
             </li>
           <% end %>
         </ul>
       </div>
     </nav>
 
-    <%= yield %> 
-    
+    <div class ="container mx-5">
+    <%= render 'layouts/unavailable_request' %>
+      <%= yield %> 
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
