@@ -1,0 +1,31 @@
+.col-height {
+  height: 180px;
+}
+
+.size_fix {
+  background-size: cover;
+}
+
+.dimming {
+  background-color:rgba(0,0,0,.3);
+}
+
+.event-background {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+}
+.event-description a {
+  color: #e8e8fa;
+}

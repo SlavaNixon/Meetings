@@ -1,6 +1,15 @@
 <h1>Создание события</h1>
 <%= form_with url: meetings_path, method: :post, data: {turbo: false} do |form| %>
-  <%= form.label :query, "Search for:" %>
-  <%= form.text_field :query %>
-  <%= form.submit "Search" %>
+  <%= form.text_field :name, placeholder: "Название", class: "mb-2 form-control w-50" %>
+  <%= form.text_field :place, placeholder: "Место проведения", class: "mb-2 form-control w-50" %>
+  
+  <div class ="form-control mb-2 w-50">
+    <%= form.label "Дата проведения", class: "mb-2 w-25" %><br />
+    <%= form.datetime_local_field :date, start_year: Time.now.year, end_year: Time.now.year + 10, include_blank: false %>
+  </div>
+
+  <%= form.text_area :description, placeholder: "Описание", class: "mb-2 form-control w-50" %>
+
+  <%= form.submit "Создать", class: "btn btn-primary w-50" %>
+
 <% end %>
