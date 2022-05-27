@@ -8,11 +8,7 @@
   <% @meeting.each do |m| %>
     <div class="container-md col-lg-3 col-xl-2 col-height mx-3 my-4">
       <div style="background-image: url(<%= image_path "meet.jpg" %>)" class="event-background"></div>
-      <div class="card-body event-description dimming">
-        <h5><%= link_to m.name, meeting_path(m.id) %></h5>
-        <h6><%= l m.date, format: :short %><h6>
-        <h6><%= m.place %><h6>
-      </div>
+      <%= render 'meetings/text_content', m: m %>
     </div>
   <% end %>
 </div>

@@ -1,11 +1,7 @@
 <div class="row">
     <div class="col-12 mt-3">
       <div style="background-image: url(<%= image_path "meet.jpg" %>)" class="event-background"></div>
-      <div class="card-body event-description dimming">
-        <h5><%= link_to @meeting.name, meeting_path(@meeting.id) %></h5>
-        <h6><%= l @meeting.date, format: :short %><h6>
-        <h6><%= @meeting.place %><h6>
-      </div>
+      <%= render 'meetings/text_content', m: @meeting %>
     </div>
 </div>
 
