@@ -16,7 +16,7 @@
 
 <div class="row">
   <% @user.meeting.each do |m| %>
-    <div class="container-md col-lg-3 col-xl-2 col-height mx-3 my-4">
+    <div class="container-md col-md-5 col-lg-5 col-xl-3 col-height mx-3 my-3">
       <div style="background-image: url(<%= image_path "meet.jpg" %>)" class="event-background"></div>
       <%= render 'meetings/text_content', m: m %>
     </div>
