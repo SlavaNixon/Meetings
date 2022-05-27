@@ -1,5 +1,5 @@
 <div class="mt-3 w-100 d-flex flex-column justify-content-center align-items-center">
-  <h1><%= @user.nickname %></h1>
+  <h1 class="text-primary"><%= @user.nickname %></h1>
   <%= image_tag "user.png", size: "160x160" %>
 </div>
 
@@ -9,3 +9,16 @@
     <%= button_to "Удалить профиль", user_path(@user), class: "btn btn-outline-danger", method: :delete %>
   </div>
 <% end %>
+
+<% if @user.meeting.empty? %>
+    <h2 class="text-center color-gray">Данный пользователь еще не создал событий</h>
+  <% end %>
+
+<div class="row">
+  <% @user.meeting.each do |m| %>
+    <div class="container-md col-lg-3 col-xl-2 col-height mx-3 my-4">
+      <div style="background-image: url(<%= image_path "meet.jpg" %>)" class="event-background"></div>
+      <%= render 'meetings/text_content', m: m %>
+    </div>
+  <% end %>
+</div>

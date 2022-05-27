@@ -1,6 +1,28 @@
 class MeetingsController < ApplicationController
+  before_action :unavailable_request, only: %[new edit destroy create update]
+
+  def destroy
+    @meeting = Meeting.find(params[:id])
+    @meeting.destroy
+    flash[:success] = 'Успешно удаленно.'
+    redirect_to root_path
+  end
+
+  def edit
+    @meeting = Meeting.find(params[:id])
+  end
+
+  def update
+    @meeting = Meeting.find(params[:id])
+    if @meeting.update(params.require(:meeting).permit(:name, :place, :date))
+      redirect_to meeting_path(@meeting)
+    else
+      flash[:error] = 'Что-то пошло не так.'
+      render :edit
+    end
+  end
+
   def new
-    unavailable_request
   end
 
   def create

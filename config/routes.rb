@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  resources :meetings, only: %i[index show new create]
+  resources :meetings
   resources :users, only: %i[show edit destroy update]
 
   root "meetings#index"

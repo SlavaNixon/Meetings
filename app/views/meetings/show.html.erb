@@ -5,13 +5,18 @@
     </div>
 </div>
 
-<div class="row mt-5">
+<div class="row mt-4">
   <div class="col-md-8">
+    <% if current_user == @user %>
+      <div class="d-flex flex-row">
+        <%= link_to "Редактировать событие", edit_meeting_path(@meeting), class: "btn btn-success mr-3" %>
+        <%= button_to "Удалить событие", meeting_path(@meeting), class: "btn btn-danger", method: :delete %>
+      </div>
+    <% end %>
   </div>
   <div class="col-md-4">
     <div>
-      <h3>Создатель:</h3>
-      <%= link_to @user.nickname, user_path(@user), class: "btn btn-primary" %>
+      <h3>Создатель: <%= link_to @user.nickname, user_path(@user), class: "btn btn-primary" %></h3>
     </div>
     <h3>Пойдут:</h3>
   </div>
