@@ -1,5 +1,5 @@
-<%= form_with model: @meeting, url: local_path, method: request, data: {turbo: false} do |form| %>
-  <%= form.text_field :name, placeholder: "Название", class: "mb-2 form-control w-75" %>
+<%= form_with model: Meeting, url: local_path, method: request, data: {turbo: false} do |form| %>
+  <%= form.text_field :name, placeholder: "Название", value: "", class: "mb-2 form-control w-75" %>
   <%= form.text_field :place, placeholder: "Место проведения", class: "mb-2 form-control w-75" %>
   
   <div class ="form-control mb-2 w-75">

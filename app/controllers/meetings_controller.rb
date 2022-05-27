@@ -10,11 +10,12 @@ class MeetingsController < ApplicationController
   end
 
   def edit
-    
+    @meeting = Meeting.find(params[:id])
   end
 
   def update
-    if @meeting.update(params.require(:meeting).permit(:name, :place, :date))
+    @meeting = Meeting.find(params[:id])
+    if @meeting.update(meeting_content)
       redirect_to meeting_path(@meeting)
     else
       flash[:error] = 'Что-то пошло не так.'
@@ -26,8 +27,9 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    @meeting = Meeting.new(name: params[:name], place: params[:place],
-      date: params[:date], description: params[:description], user: current_user)
+    correct_params = meeting_content
+    correct_params[:user] = current_user
+    @meeting = Meeting.new(correct_params)
     if @meeting.save
       flash[:success] = 'Сохраннено.'
       redirect_to root_path
@@ -45,9 +47,12 @@ class MeetingsController < ApplicationController
 
   private
 
+  def meeting_content
+    params.require(:meeting).permit(:name, :place, :date, :description)
+  end
+
   def check_current_user
-    @meeting = Meeting.find(params[:id])
-    @user = @meeting.user
+    @user = Meeting.find(params[:id]).user
     unless current_user == @user
       flash[:error] = 'Что-то пошло не так.'
       redirect_to root_path
