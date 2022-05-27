@@ -15,6 +15,11 @@ class MeetingsController < ApplicationController
   def index
     @meeting = Meeting.order(:created_at)
   end
+
+  def show
+    @meeting = Meeting.find(params[:id])
+    @user = @meeting.user
+  end
 end
 
 def unavailable_request
