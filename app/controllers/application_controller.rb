@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
       keys: [:password, :password_confirmation, :current_password]
     )
   end
+
+  def unavailable_request
+    unless user_signed_in?
+      flash[:error] = 'Вам это недоступно.'
+      redirect_to root_path
+    end
+  end
 end

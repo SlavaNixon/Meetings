@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
-  before_action :unavailable_request, only: %[new edit destroy create update]
+  before_action :unavailable_request, only: %i[new edit destroy create update]
+  before_action :check_current_user, only: %i[edit update destroy]
 
   def destroy
     @meeting = Meeting.find(params[:id])
@@ -9,11 +10,10 @@ class MeetingsController < ApplicationController
   end
 
   def edit
-    @meeting = Meeting.find(params[:id])
+    
   end
 
   def update
-    @meeting = Meeting.find(params[:id])
     if @meeting.update(params.require(:meeting).permit(:name, :place, :date))
       redirect_to meeting_path(@meeting)
     else
@@ -28,7 +28,7 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(name: params[:name], place: params[:place],
       date: params[:date], description: params[:description], user: current_user)
-      if @meeting.save
+    if @meeting.save
       flash[:success] = 'Сохраннено.'
       redirect_to root_path
     end
@@ -42,11 +42,15 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.find(params[:id])
     @user = @meeting.user
   end
-end
 
-def unavailable_request
-  unless user_signed_in?
-    flash[:error] = 'Вам это недоступно.'
-    redirect_to root_path
+  private
+
+  def check_current_user
+    @meeting = Meeting.find(params[:id])
+    @user = @meeting.user
+    unless current_user == @user
+      flash[:error] = 'Что-то пошло не так.'
+      redirect_to root_path
+    end
   end
 end
