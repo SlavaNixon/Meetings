@@ -3,7 +3,9 @@
   <%= image_tag "user.png", size: "160x160" %>
 </div>
 
-<div class="d-flex flex-row justify-content-center align-items-center mt-5 mb-5">
-      <%= link_to "Редактировать профиль", edit_user_path(@user), class: "btn btn-outline-success mr-3" %>
-      <%= button_to "Удалить профиль", user_path(@user), class: "btn btn-outline-danger", method: :delete %>
+<% if current_user == @user %>
+  <div class="d-flex flex-row justify-content-center align-items-center mt-5 mb-5">
+    <%= link_to "Редактировать профиль", edit_user_path(@user), class: "btn btn-outline-success mr-3" %>
+    <%= button_to "Удалить профиль", user_path(@user), class: "btn btn-outline-danger", method: :delete %>
   </div>
+<% end %>
