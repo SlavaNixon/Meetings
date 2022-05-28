@@ -24,19 +24,23 @@ ru:
       few: '%{count} ошибки'
       many: '%{count} ошибка'
       other: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
+
     registrations:
       new:
         title: Регистация
         submit: Зарегистрироваться
         password_length: символов минимум
+
     passwords:
       new:
         title: Забыли пароль?
         submit: Отправить инструкции
+
     sessions:
       new:
         title: Войти
         remember: Запомнить меня
+
     links:
       join: Войти, если есть аккаунт
       registration: Зарегистрироваться
@@ -44,6 +48,7 @@ ru:
     application:
       my_profile: Мой профиль
       exit: Выйти
+
     meetings:
       index:
         title: События
@@ -51,6 +56,7 @@ ru:
       show:
         edit: Редактировать событие
         delete: Удалить событие
+        delete_confirm: Вы точно уверены, что хотите удалить данное событие?
         creator: Создатель
         invited: Пойдут
       new:
@@ -59,6 +65,7 @@ ru:
         title: Редактирование события
       meeting_form:
         submit: Создать
+
     users:
       edit:
         title: Редактировать профиль
@@ -66,5 +73,6 @@ ru:
       show:
         edit: Редактировать профиль
         delete: Удалить профиль
+        delete_confirm: Вы точно уверены, что хотите удалить данный профиль?
         no_meetings: Данный пользователь еще не создал событий
 
