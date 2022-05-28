@@ -61,8 +61,10 @@ ru:
         invited: Пойдут
       new:
         title: Создание события
+        back: Назад
       edit:
         title: Редактирование события
+        back: Назад к событию
       meeting_form:
         submit: Создать
 
@@ -70,6 +72,7 @@ ru:
       edit:
         title: Редактировать профиль
         submit: Создать
+        back: Назад к профилю
       show:
         edit: Редактировать профиль
         delete: Удалить профиль

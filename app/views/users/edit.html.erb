@@ -3,5 +3,6 @@
   <%= form.text_field :nickname, placeholder: t("activerecord.attributes.user.nickname"), class: "mb-2 form-control w-75" %>
   <%= form.text_field :email, placeholder: t("activerecord.attributes.user.email"), class: "mb-2 form-control w-75" %>
 
-  <%= form.submit t("my.users.edit.submit"), class: "btn btn-primary w-75" %>
+  <%= form.submit t("my.users.edit.submit"), class: "btn btn-primary w-75 mb-3" %>
 <% end %>
+<%= link_to t("my.users.edit.back"), @user %>
