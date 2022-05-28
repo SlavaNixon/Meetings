@@ -5,7 +5,7 @@ class MeetingsController < ApplicationController
   def destroy
     @meeting = Meeting.find(params[:id])
     @meeting.destroy
-    flash[:success] = 'Успешно удаленно.'
+    flash[:success] = I18n.t("my.controllers.meetings.destroy")
     redirect_to root_path
   end
 
@@ -18,7 +18,7 @@ class MeetingsController < ApplicationController
     if @meeting.update(meeting_content)
       redirect_to meeting_path(@meeting)
     else
-      flash[:error] = 'Что-то пошло не так.'
+      flash[:error] = I18n.t("my.controllers.all.error")
       render :edit
     end
   end
@@ -31,7 +31,7 @@ class MeetingsController < ApplicationController
     correct_params[:user] = current_user
     @meeting = Meeting.new(correct_params)
     if @meeting.save
-      flash[:success] = 'Сохраннено.'
+      flash[:success] = I18n.t("my.controllers.meetings.create")
       redirect_to root_path
     end
   end
@@ -54,7 +54,7 @@ class MeetingsController < ApplicationController
   def check_current_user
     @user = Meeting.find(params[:id]).user
     unless current_user == @user
-      flash[:error] = 'Что-то пошло не так.'
+      flash[:error] = I18n.t("my.controllers.all.error")
       redirect_to root_path
     end
   end

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.update(params.require(:user).permit(:nickname, :email))
       redirect_to user_path(@user)
     else
-      flash[:error] = 'Что-то пошло не так.'
+      flash[:error] = I18n.t("my.controllers.all.error")
       render :edit
     end
   end
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def destroy
     @user.meeting.destroy_all
     @user.destroy
-    flash[:success] = 'Ваш аккаунт успешно удален.'
+    flash[:success] = I18n.t("my.controllers.users.destroy")
     redirect_to root_path
   end
 
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def check_current_user
     @user = User.find(params[:id])
     unless current_user == @user
-      flash[:error] = 'Что-то пошло не так.'
+      flash[:error] = I18n.t("my.controllers.all.error")
       redirect_to root_path
     end
   end
