@@ -33,6 +33,9 @@ class MeetingsController < ApplicationController
     if @meeting.save
       flash[:success] = I18n.t("my.controllers.meetings.create")
       redirect_to root_path
+    else
+      flash[:error] = I18n.t("my.controllers.all.error")
+      render :new
     end
   end
 

@@ -4,11 +4,4 @@
   <%= link_to t("my.meetings.index.create_meeting"), new_meeting_path, class: "btn btn-success mb-3" %>
 <% end %>
 
-<div class="row">
-  <% @meeting.each do |m| %>
-    <div class="container-md col-md-5 col-lg-5 col-xl-3 col-height mx-3 my-3">
-      <div style="background-image: url(<%= image_path "meet.jpg" %>)" class="event-background"></div>
-      <%= render 'meetings/text_content', m: m %>
-    </div>
-  <% end %>
-</div>
+<%= render "layouts/meetings_list", meetings: @meeting %>

@@ -1,0 +1,14 @@
+<% if @meeting&.errors&.any? %>
+  <div class="alert alert-danger alert-dismissible">
+    <%= t("my.error",
+               count: @meeting.errors.count,
+               resource: @meeting.class.model_name.human)
+    %>
+    <% @meeting.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>

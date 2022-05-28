@@ -14,11 +14,4 @@
     <h2 class="text-center color-gray"><%= t("my.users.show.no_meetings") %></h2>
   <% end %>
 
-<div class="row">
-  <% @user.meeting.each do |m| %>
-    <div class="container-md col-md-5 col-lg-5 col-xl-3 col-height mx-3 my-3">
-      <div style="background-image: url(<%= image_path "meet.jpg" %>)" class="event-background"></div>
-      <%= render 'meetings/text_content', m: m %>
-    </div>
-  <% end %>
-</div>
+<%= render "layouts/meetings_list", meetings: @user.meeting %>

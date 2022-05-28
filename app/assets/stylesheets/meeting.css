@@ -10,6 +10,10 @@
   background-color:rgba(0,0,0,.3);
 }
 
+.word-break{
+  word-break: break-all;
+}
+
 .event-background {
   position: absolute;
   width: 100%;

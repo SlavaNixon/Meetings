@@ -5,7 +5,7 @@
 */
 @media screen and (max-width: 330px){
   html{
-      width: 330px;
+      width: 354px;
       overflow: auto;
   }
 }
