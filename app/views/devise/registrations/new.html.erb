@@ -1,29 +1,29 @@
 <div class="ml-5">
-  <h2>Регистация</h2>
+  <h2><%= t "my.registrations.new.title" %></h2>
 
   <div class = "form-group">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "Никнейм", class: "mb-2 form-control w-75" %>
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: t("activerecord.attributes.user.nickname"), class: "mb-2 form-control w-75" %>
       </div>
 
 
       <div class="field">
-        <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "mb-2 form-control w-75" %>
+        <%= f.email_field :email, autocomplete: "email", placeholder: t("activerecord.attributes.user.email"), class: "mb-2 form-control w-75" %>
       </div>
 
       <div class="field">
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Пароль (6 символов минимум)", class: "mb-2 form-control w-75" %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "#{t("activerecord.attributes.user.password")} (6 #{t("my.registrations.new.password_length")})", class: "mb-2 form-control w-75" %>
       </div>
 
       <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Потдверждение пароля", class: "form-control w-75" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t("activerecord.attributes.user.password_confirmation"), class: "form-control w-75" %>
       </div>
 
       <div class="actions mt-2">
-        <%= f.submit "Зарегистрироваться", class: "btn btn-primary w-75" %>
+        <%= f.submit t("my.registrations.new.submit"), class: "btn btn-primary w-75" %>
       </div>
     <% end %>
     <%= render "devise/shared/links" %>

@@ -1,16 +1,18 @@
-<h2>Forgot your password?</h2>
+<div class="ml-5">
+  <h2><%= t "my.passwords.new.title" %></h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class = "form-group">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t("activerecord.attributes.user.email"), class: "mb-2 form-control w-75" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t("my.passwords.new.submit"), class: "btn btn-primary w-75" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

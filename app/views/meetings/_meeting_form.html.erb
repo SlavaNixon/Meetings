@@ -1,14 +1,14 @@
 <%= form_with model: Meeting, url: local_path, method: request, data: {turbo: false} do |form| %>
-  <%= form.text_field :name, placeholder: "Название", value: "", class: "mb-2 form-control w-75" %>
-  <%= form.text_field :place, placeholder: "Место проведения", class: "mb-2 form-control w-75" %>
+  <%= form.text_field :name, placeholder: t("activerecord.attributes.meeting.name"), value: "", class: "mb-2 form-control w-75" %>
+  <%= form.text_field :place, placeholder: t("activerecord.attributes.meeting.place"), class: "mb-2 form-control w-75" %>
   
   <div class ="form-control mb-2 w-75">
-    <%= form.label "Дата проведения", class: "mb-2 w-25" %><br />
+    <%= form.label t("activerecord.attributes.meeting.date"), class: "mb-2 w-25" %><br />
     <%= form.datetime_local_field :date, include_blank: false, class: "w-50" %>
   </div>
 
-  <%= form.text_area :description, placeholder: "Описание", class: "mb-2 form-control w-75" %>
+  <%= form.text_area :description, placeholder: t("activerecord.attributes.meeting.description"), class: "mb-2 form-control w-75" %>
 
-  <%= form.submit "Создать", class: "btn btn-primary w-75" %>
+  <%= form.submit t("my.meetings.meeting_form.submit"), class: "btn btn-primary w-75" %>
 
 <% end %>

@@ -1,24 +1,24 @@
 <div class="ml-5">
-  <h2>Войти</h2>
+  <h2><%= t "my.sessions.new.title" %></h2>
   <div class = "form-group">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
       <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "mb-2 form-control w-75" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t("activerecord.attributes.user.email"), class: "mb-2 form-control w-75" %>
       </div>
 
       <div class="field">
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Пароль", class:"form-control w-75" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: t("activerecord.attributes.user.password"), class:"form-control w-75" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
         <div class="field">
           <%= f.check_box :remember_me %>
-          <%= f.label "Запомнить меня" %>
+          <%= f.label t("my.sessions.new.remember") %>
         </div>
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Войти", class: "btn btn-primary w-75" %>
+        <%= f.submit t("my.sessions.new.title"), class: "btn btn-primary w-75" %>
       </div>
     <% end %>
 

@@ -4,7 +4,7 @@ ru:
     # Перевод названия моделей
     models:
       user: Пользователь
-      meeting: Встреча
+      meeting: Событие
 
     # Перевод атрибутов моделей
     attributes:
@@ -13,7 +13,7 @@ ru:
         nickname: Никнейм
         password: Пароль
         password_confirmation: Подтверждение пароля
-      event:
+      meeting:
         name: Название
         place: Место проведения
         date: Дата и время
@@ -24,3 +24,47 @@ ru:
       few: '%{count} ошибки'
       many: '%{count} ошибка'
       other: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
+    registrations:
+      new:
+        title: Регистация
+        submit: Зарегистрироваться
+        password_length: символов минимум
+    passwords:
+      new:
+        title: Забыли пароль?
+        submit: Отправить инструкции
+    sessions:
+      new:
+        title: Войти
+        remember: Запомнить меня
+    links:
+      join: Войти, если есть аккаунт
+      registration: Зарегистрироваться
+      forgot_password: Забыли пароль?
+    application:
+      my_profile: Мой профиль
+      exit: Выйти
+    meetings:
+      index:
+        title: События
+        create_meeting: Создать событие
+      show:
+        edit: Редактировать событие
+        delete: Удалить событие
+        creator: Создатель
+        invited: Пойдут
+      new:
+        title: Создание события
+      edit:
+        title: Редактирование события
+      meeting_form:
+        submit: Создать
+    users:
+      edit:
+        title: Редактировать профиль
+        submit: Создать
+      show:
+        edit: Редактировать профиль
+        delete: Удалить профиль
+        no_meetings: Данный пользователь еще не создал событий
+

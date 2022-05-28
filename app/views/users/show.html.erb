@@ -5,13 +5,13 @@
 
 <% if current_user == @user %>
   <div class="d-flex flex-row justify-content-center align-items-center mt-5 mb-5">
-    <%= link_to "Редактировать профиль", edit_user_path(@user), class: "btn btn-outline-success mr-3" %>
-    <%= button_to "Удалить профиль", user_path(@user), class: "btn btn-outline-danger", method: :delete %>
+    <%= link_to t("my.users.show.edit"), edit_user_path(@user), class: "btn btn-outline-success mr-3" %>
+    <%= button_to t("my.users.show.delete"), user_path(@user), class: "btn btn-outline-danger", method: :delete %>
   </div>
 <% end %>
 
 <% if @user.meeting.empty? %>
-    <h2 class="text-center color-gray">Данный пользователь еще не создал событий</h>
+    <h2 class="text-center color-gray"><%= t("my.users.show.no_meetings") %></h2>
   <% end %>
 
 <div class="row">

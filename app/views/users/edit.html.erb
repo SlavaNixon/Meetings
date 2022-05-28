@@ -1,7 +1,7 @@
-<h1>Редактировать профиль</h1>
+<h1><%= t("my.users.edit.title") %></h1>
 <%= form_with model: @user, url: user_path, method: :patch, data: {turbo: false} do |form| %>
-  <%= form.text_field :nickname, placeholder: "Никнейм", class: "mb-2 form-control w-75" %>
-  <%= form.text_field :email, placeholder: "Email", class: "mb-2 form-control w-75" %>
+  <%= form.text_field :nickname, placeholder: t("activerecord.attributes.user.nickname"), class: "mb-2 form-control w-75" %>
+  <%= form.text_field :email, placeholder: t("activerecord.attributes.user.email"), class: "mb-2 form-control w-75" %>
 
-  <%= form.submit "Создать", class: "btn btn-primary w-75" %>
+  <%= form.submit t("my.users.edit.submit"), class: "btn btn-primary w-75" %>
 <% end %>
