@@ -1,6 +1,6 @@
 <div class="mt-3 w-100 d-flex flex-column justify-content-center align-items-center">
   <h1 class="text-primary"><%= @user.nickname %></h1>
-  <%= image_tag "user.png", size: "160x160" %>
+  <%= image_tag "user.png", size: "160x160", class: "rounded-circle" %>
 </div>
 
 <% if current_user == @user %>
