@@ -6,7 +6,7 @@
   
   <div class ="form-control mb-2 w-75">
     <%= form.label t("activerecord.attributes.meeting.date"), class: "mb-2 w-25" %><br />
-    <%= form.datetime_local_field :date, include_blank: false, class: "w-50" %>
+    <%= form.datetime_select :date, class: "w-50" %>
   </div>
 
   <%= form.text_area :description, placeholder: t("activerecord.attributes.meeting.description"), class: "mb-2 form-control w-75" %>
