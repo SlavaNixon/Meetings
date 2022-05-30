@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.meeting.destroy_all
     @user.destroy
     flash[:success] = I18n.t("my.controllers.users.destroy")
     redirect_to root_path
