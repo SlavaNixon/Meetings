@@ -1,7 +1,7 @@
-<%= render "meetings/meeting_validation_error" %>
+<%= render "meetings/meeting_validation_error", meeting: meeting %>
 
-<%= form_with model: @meeting || Meeting, url: local_path, method: request, data: {turbo: false} do |form| %>
-  <%= form.text_field :name, placeholder: t("activerecord.attributes.meeting.name"), value: @meeting&.name || "", class: "mb-2 form-control w-75" %>
+<%= form_with model: meeting || Meeting, url: local_path, method: request, data: {turbo: false} do |form| %>
+  <%= form.text_field :name, placeholder: t("activerecord.attributes.meeting.name"), value: meeting&.name || "", class: "mb-2 form-control w-75" %>
   <%= form.text_field :place, placeholder: t("activerecord.attributes.meeting.place"), class: "mb-2 form-control w-75" %>
   
   <div class ="form-control mb-2 w-75">

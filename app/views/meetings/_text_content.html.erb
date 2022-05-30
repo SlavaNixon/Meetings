@@ -1,5 +1,5 @@
 <div class="event-description dimming col-height word-break">
-  <h4><%= link_to m.name, meeting_path(m.id) %></h4>
-  <h5><%= l m.date, format: :long %><h5>
-  <h6><%= m.place %><h6>
+  <h4><%= link_to meeting.name, meeting_path(meeting.id) %></h4>
+  <h5><%= l meeting.date, format: :long %><h5>
+  <h6><%= meeting.place %><h6>
 </div>
