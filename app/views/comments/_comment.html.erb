@@ -1,0 +1,24 @@
+<div class="buffer-bottom mt-2 form-control">
+  <p class = "mb-1"><%= comment.body %></p>
+  <p class = "mb-1">
+    <span>
+      <% if comment.user.present? %>
+        
+        <span class="mb-1">
+          <% if request.path == user_path(user) %>
+            <%= user.name %>
+          <% else %>
+            <%= link_to user.name, user_path(user) %>
+          <% end %>
+        </span>
+
+      <% else %>
+        <em><strong><%= comment.user_name %></strong></em>
+      <% end %>
+    </span>
+    <em><%= l comment.created_at, format: :short %></em>
+    <% if current_user == @user %>
+      <%= button_to "Удалить", comment_path(comment), method: :delete, class: "btn btn-danger", method: :delete, form: { data: { 'turbo-confirm': t("my.comments.delete_confirm") } }%>
+    <% end %>
+  </p>
+</div>

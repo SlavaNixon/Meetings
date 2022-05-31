@@ -13,6 +13,17 @@
         <%= button_to t("my.meetings.show.delete"), meeting_path(@meeting), class: "btn btn-danger", method: :delete, form: { data: { 'turbo-confirm': t("my.meetings.show.delete_confirm") } } %>
       </div>
     <% end %>
+
+    <div class="buffer-top">
+      <div class="buffer-both">
+      <h2>Комментарии:</h2>
+        <%= render partial: 'comments/comment',
+          collection: @meeting.comments,
+          owner: @user
+           %>
+      </div>
+    </div>
+
   </div>
   <div class="col-md-4">
     <div>

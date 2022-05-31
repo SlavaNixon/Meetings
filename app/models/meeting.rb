@@ -1,6 +1,7 @@
 class Meeting < ApplicationRecord
   # user = owner
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :place, presence: true, length: { maximum: 50 }
