@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_30_235037) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_082818) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.string "user_name"
@@ -33,6 +33,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_235037) do
     t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "user_name"
+    t.string "user_email"
+    t.integer "meeting_id", null: false
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meeting_id"], name: "index_subscriptions_on_meeting_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "nickname"
     t.datetime "created_at", null: false
@@ -48,4 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_235037) do
 
   add_foreign_key "comments", "meetings"
   add_foreign_key "comments", "users"
+  add_foreign_key "subscriptions", "meetings"
+  add_foreign_key "subscriptions", "users"
 end

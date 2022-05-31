@@ -16,19 +16,35 @@
 
     <div class="buffer-top">
       <div class="buffer-both">
-      <h2>Комментарии:</h2>
+      <h2><%= t("my.meetings.show.comments") %></h2>
         <%= render partial: 'comments/comment',
           collection: @meeting.comments,
           owner: @user
            %>
+        <%= render partial: 'comments/comment_form' %>
       </div>
     </div>
 
   </div>
   <div class="col-md-4">
+  <% if @user.present? %>
     <div>
       <h3><%= t("my.meetings.show.creator") %>: <%= link_to @user.nickname, user_path(@user), class: "btn btn-primary" %></h3>
     </div>
+  <% end %>
     <h3><%= t("my.meetings.show.invited") %>:</h3>
+    <div>
+      <p>
+        <%= render partial: 'subscriptions/subscription',
+        collection: @meeting.subscriptions.except(@new_subscription) %>
+      </p>
+    </div>
+    <div class="meeting-subscription-form">
+      <% if user_signed_in? %>
+        <%= button_to t("my.meetings.show.sub"), meeting_subscriptions_path(@meeting), class: "btn btn-primary", method: :post %>
+      <% else %>
+        <%= render "subscriptions/subscription_form" %>
+      <% end %>
+    </div>
   </div>
 </div>

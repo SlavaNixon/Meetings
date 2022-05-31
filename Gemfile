@@ -7,6 +7,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'russian'
 
+gem "font-awesome-rails"
+
 gem "rails", "~> 7.0.3"
 
 gem "sprockets-rails"

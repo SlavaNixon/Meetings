@@ -1,0 +1,13 @@
+<div class="form-control mt-4">
+<h4 class="text-center"><%= t("my.comments.create") %></h4>
+<%= form_with model: Comment, url: meeting_comments_path(@meeting), method: :post, data: {turbo: false} do |form| %>
+  <%= form.text_field :body, placeholder: t("activerecord.attributes.comment.body"), value: "", class: "mb-2 form-control w-100" %>
+
+  <% unless user_signed_in? %>
+    <%= form.text_field :user_name, placeholder: t("activerecord.attributes.user.nickname"), value: "", class: "mb-2 form-control w-100" %>
+  <% end %>
+  <%= form.submit t("my.meetings.meeting_form.submit"), class: "btn btn-primary w-100 mb-3" %>
+
+<% end %>
+
+</div>

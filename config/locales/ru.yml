@@ -18,6 +18,8 @@ ru:
         place: Место проведения
         date: Дата и время
         description: Описание
+      comment:
+        body: Текст комментария
   my:
     error:
       one: "%{count} ошибки:"
@@ -59,6 +61,8 @@ ru:
         delete_confirm: Вы точно уверены, что хотите удалить данное событие?
         creator: Создатель
         invited: Пойдут
+        comments: "Комментарии:"
+        sub: Подписаться
       new:
         title: Создание события
         back: Назад
@@ -81,14 +85,25 @@ ru:
     
     comments:
       delete_confirm: Вы точно хотите удалить данный комментарий?
+      delete_button: Удалить комментарий
+      create: Отправить комментарий
+
+    subscriptions:
+      delete_confirm: Вы уверены, что хотите удалить данную подписку?
+      create: Подписаться на данную встречу
+      create_button: Подписаться
+
     controllers:
       all:
         error: Что-то пошло не так.
       meetings:
-        destroy: Успешно удаленно.
         create: Сохраннено.
+        destroy: Успешно удаленно.
       users:
         destroy: Ваш аккаунт успешно удален.
       comments:
         create: 'Ваш комментарий добавлен'
         destroy: 'Комментарий удален'
+      subscriptions:
+        create: Вы подписаны на это событие
+        destroy: Участник отписан

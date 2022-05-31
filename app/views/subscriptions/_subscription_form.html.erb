@@ -1,0 +1,9 @@
+<div class="form-control mt-4">
+  <h4 class="text-center"><%= t("my.subscriptions.create") %></h4>
+  <%= form_with model: Subscription, url: meeting_subscriptions_path(@meeting), method: :post, data: {turbo: false} do |form| %>
+    <%= form.text_field :user_name, placeholder: t("activerecord.attributes.user.nickname"), value: "", class: "mb-2 form-control w-100" %>
+
+      <%= form.text_field :user_email, placeholder: t("activerecord.attributes.user.email"), value: "", class: "mb-2 form-control w-100" %>
+    <%= form.submit t("my.subscriptions.create_button"), class: "btn btn-primary w-100 mb-3" %>
+  <% end %>
+</div>

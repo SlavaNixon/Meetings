@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_meeting, only: [:create]
+  before_action :set_meeting, only: [:create, :destroy]
   before_action :set_comment, only: [:destroy]
 
   def create
@@ -20,7 +20,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @meeting = @comment.meeting
     @user = @comment.meeting.user
     if current_user == @user
       @comment.destroy!
@@ -38,7 +37,7 @@ class CommentsController < ApplicationController
   end
 
   def set_comment
-    @comment = Comment.find(params[:id])
+    @comment = @meeting.comments.find(params[:id])
   end
 
   def comment_params

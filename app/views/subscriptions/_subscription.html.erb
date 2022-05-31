@@ -1,0 +1,14 @@
+<div class="d-flex flex-row mb-1">
+  <div class="col-md-4">
+    <% if subscription.user.present? %>
+      <em><%= link_to subscription.user.nickname, user_path(subscription.user) %></em>
+    <% else %>
+      <em><%= subscription.user_name %> </em>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <% if current_user == @user %>
+      <%= button_to fa_icon("trash"), meeting_subscription_path(@meeting, subscription), class: "btn", method: :delete, form: { data: { 'turbo-confirm': t("my.subscriptions.delete_confirm") } }%>
+    <% end %>
+  </div>
+</div>
