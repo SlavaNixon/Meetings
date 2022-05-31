@@ -40,10 +40,12 @@
       </p>
     </div>
     <div class="meeting-subscription-form">
-      <% if user_signed_in? %>
-        <%= button_to t("my.meetings.show.sub"), meeting_subscriptions_path(@meeting), class: "btn btn-primary", method: :post %>
-      <% else %>
-        <%= render "subscriptions/subscription_form" %>
+      <% if @meeting.user != current_user %>
+        <% if user_signed_in? %>
+          <%= button_to t("my.meetings.show.sub"), meeting_subscriptions_path(@meeting), class: "btn btn-primary", method: :post %>
+        <% else %>
+          <%= render "subscriptions/subscription_form" %>
+        <% end %>
       <% end %>
     </div>
   </div>
