@@ -29,7 +29,7 @@
   <div class="col-md-4">
   <% if @user.present? %>
     <div>
-      <h3><%= t("my.meetings.show.creator") %>: <%= link_to @user.nickname, user_path(@user), class: "btn btn-primary" %></h3>
+      <h3><%= t("my.meetings.show.creator") %>: <%= image_tag(user_thumb_avatar(@user), size: "30x30", class: "rounded-circle") %> <%= link_to @user.nickname, user_path(@user), class: "btn btn-primary" %></h3>
     </div>
   <% end %>
     <h3><%= t("my.meetings.show.invited") %>:</h3>

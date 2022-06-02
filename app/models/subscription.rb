@@ -10,9 +10,13 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: {scope: :meeting_id}, if: -> { user.present? }
   validates :user_email, uniqueness: {scope: :meeting_id}, if: -> { user.present? }
 
-  validates :user, comparison: { other_than: -> {meeting.user} }, if: -> { user.present? }
+  validate :user_is_owner, if: -> { user.present? }
   validate :email_already_exitst, unless: -> { user.present? }
   
+  def user_is_owner
+    errors.add(:user, "is owner") if user == meeting.user
+  end
+
   def email_already_exitst
     errors.add(:user_email, "already exists") if User.exists?(email: user_email)
   end
@@ -29,7 +33,7 @@ class Subscription < ApplicationRecord
 
   def user_name
     if user.present?
-      user.name
+      user.nickname
     else
       super
     end

@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validates :nickname, length: { in: 4..21 }, presence: true, uniqueness: true
 
+  mount_uploader :avatar, AvatarUploader
+
   private
 
   def user_name

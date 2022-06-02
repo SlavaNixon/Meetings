@@ -1,7 +1,7 @@
 <div class="d-flex flex-row mb-1">
   <div class="col-md-4">
     <% if subscription.user.present? %>
-      <em><%= link_to subscription.user.nickname, user_path(subscription.user) %></em>
+      <em><%= image_tag(user_thumb_avatar(subscription.user), size: "30x30", class: "rounded-circle") %> <%= link_to subscription.user.nickname, user_path(subscription.user) %></em>
     <% else %>
       <em><%= subscription.user_name %> </em>
     <% end %>

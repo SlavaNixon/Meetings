@@ -11,6 +11,7 @@ ru:
       user:
         email: Email
         nickname: Никнейм
+        avatar: 'Аватарка'
         password: Пароль
         password_confirmation: Подтверждение пароля
       meeting:

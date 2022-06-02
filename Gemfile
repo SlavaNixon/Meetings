@@ -7,6 +7,9 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'russian'
 
+gem 'carrierwave'
+gem 'rmagick'
+
 gem "font-awesome-rails"
 
 gem "rails", "~> 7.0.3"
