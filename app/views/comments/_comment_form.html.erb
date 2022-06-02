@@ -1,4 +1,4 @@
-<div class="form-control mt-4">
+<div class="form-control mt-2">
 <h4 class="text-center"><%= t("my.comments.create") %></h4>
 <%= form_with model: Comment, url: meeting_comments_path(@meeting), method: :post, data: {turbo: false} do |form| %>
   <%= form.text_field :body, placeholder: t("activerecord.attributes.comment.body"), value: "", class: "mb-2 form-control w-100" %>

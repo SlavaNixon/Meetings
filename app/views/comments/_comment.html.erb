@@ -4,7 +4,7 @@
     <span>
       <% if comment.user.present? %>
         <span class="mb-1">
-          <%= image_tag user_avatar(comment.user), size: "30x30", class: "rounded-circle" %> <%= link_to comment.user.nickname, user_path(comment.user) %>
+          <%= render "users/user", user: comment.user %>
         </span>
       <% else %>
         <em><strong><%= comment.user_name %></strong></em>

@@ -2,4 +2,7 @@
   <h4><%= link_to meeting.name, meeting_path(meeting.id) %></h4>
   <h5><%= l meeting.date, format: :long %><h5>
   <h6><%= meeting.place %><h6>
+  <% meeting.visitors.last(8).each do |user| %>
+    <%= link_to(image_tag(user_thumb_avatar(user), class: "rounded-circle bg-light", size: "30x30"), user_path(user)) %>
+  <% end %>
 </div>

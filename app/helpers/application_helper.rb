@@ -14,4 +14,12 @@ module ApplicationHelper
       asset_path('user.png')
     end
   end
+
+  def meeting_photo(meeting)
+    if meeting.photos.present?
+      meeting.photos.sample.photo.url
+    else
+      asset_path('meet.jpg')
+    end
+  end
 end

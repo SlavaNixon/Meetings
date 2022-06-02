@@ -1,0 +1,11 @@
+<%= form_with model: Photo, url: meeting_photos_path(@meeting), html: { multipart: true } do |f| %>
+    <div>
+      <%= f.label "Загрузить фото" %>
+    </div>
+    <div class="mb-2">
+      <%= f.file_field :photo %>
+    </div>
+    <div class="mb-2">
+      <%= f.submit 'Загрузить', class: 'btn btn-primary' %>
+    </div>
+<% end %>

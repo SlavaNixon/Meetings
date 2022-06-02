@@ -64,6 +64,7 @@ ru:
         invited: Пойдут
         comments: "Комментарии:"
         sub: Подписаться
+        photos: "Фотографии:"
       new:
         title: Создание события
         back: Назад
@@ -108,3 +109,6 @@ ru:
       subscriptions:
         create: Вы подписаны на это событие
         destroy: Участник отписан
+      photos:
+        create: Фотография добавлена
+        destroy: Фотография удалена

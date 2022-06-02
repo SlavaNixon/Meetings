@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12 mt-3">
-      <div style="background-image: url(<%= image_path "meet.jpg" %>)" class="event-background"></div>
+      <div style="background-image: url(<%= image_path meeting_photo(@meeting) %>)" class="event-background"></div>
       <%= render 'meetings/text_content', meeting: @meeting %>
     </div>
 </div>
@@ -14,9 +14,27 @@
       </div>
     <% end %>
 
+    <div class="mb-3 mt-1"><h2>Описание данного события:</h2><h5 class="word-break color-gray"><%= @meeting.description %></h5></div>
+
+    <h2 class="mt-3"><%= t("my.meetings.show.photos") %></h2>
+    <div class="row">
+      <div class="col-md-8">
+        <%= render partial: 'photos/photo', collection: @meeting.photos.except(@new_photo) %>
+        <% if @meeting.photos.blank? %>
+          <h5 class="color-gray">Фотографий пока что нет</h5>
+        <% end %>
+      </div>
+    </div>
+
+    <% if user_signed_in? %>
+      <div class="form-control mt-3 mb-1">
+        <%= render partial: 'photos/form' %>
+      </div>
+    <% end %>
+
     <div class="buffer-top">
       <div class="buffer-both">
-      <h2><%= t("my.meetings.show.comments") %></h2>
+      <h2 class="mt-3"><%= t("my.meetings.show.comments") %></h2>
         <%= render partial: 'comments/comment',
           collection: @meeting.comments,
           owner: @user
@@ -29,7 +47,7 @@
   <div class="col-md-4">
   <% if @user.present? %>
     <div>
-      <h3><%= t("my.meetings.show.creator") %>: <%= image_tag(user_thumb_avatar(@user), size: "30x30", class: "rounded-circle") %> <%= link_to @user.nickname, user_path(@user), class: "btn btn-primary" %></h3>
+      <h3><%= t("my.meetings.show.creator") %>:</h3><div class="px-2"><%= render "users/user", user: @user %></div></p>
     </div>
   <% end %>
     <h3><%= t("my.meetings.show.invited") %>:</h3>
