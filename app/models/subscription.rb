@@ -12,17 +12,7 @@ class Subscription < ApplicationRecord
 
   validate :user_is_owner, if: -> { user.present? }
   validate :email_already_exitst, unless: -> { user.present? }
-  
-  def user_is_owner
-    errors.add(:user, "is owner") if user == meeting.user
-  end
 
-  def email_already_exitst
-    errors.add(:user_email, "already exists") if User.exists?(email: user_email)
-  end
-
-  # Если есть юзер, выдаем его email,
-  # если нет – дергаем исходный метод
   def user_email
     if user.present?
       user.email
@@ -37,5 +27,15 @@ class Subscription < ApplicationRecord
     else
       super
     end
+  end
+
+  private
+
+  def user_is_owner
+    errors.add(:user, I18n.t("my.validations.errors.is_owner")) if user == meeting.user
+  end
+
+  def email_already_exitst
+    errors.add(:user_email, I18n.t("my.validations.errors.already_exists")) if User.exists?(email: user_email)
   end
 end

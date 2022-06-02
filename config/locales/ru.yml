@@ -22,6 +22,10 @@ ru:
       comment:
         body: Текст комментария
   my:
+    validations:
+      errors:
+        is_owner: является создателем
+        already_exists: уже существует
     error:
       one: "%{count} ошибки:"
       few: '%{count} ошибки'
