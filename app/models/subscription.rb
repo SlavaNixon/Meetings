@@ -11,17 +11,10 @@ class Subscription < ApplicationRecord
   validates :user_email, uniqueness: {scope: :meeting_id}, if: -> { user.present? }
 
   validates :user, comparison: { other_than: -> {meeting.user} }, if: -> { user.present? }
-  validates :user_email, exclusion: { in: User.pluck(:email) }, unless: -> { user.present? }
-  validates :user_name, exclusion: { in: User.pluck(:nickname) }, unless: -> { user.present? }
+  validate :email_already_exitst, unless: -> { user.present? }
   
-  # Если есть юзер, выдаем его имя,
-  # если нет – дергаем исходный метод
-  def user_name
-    if user.present?
-    user.name
-    else
-    super
-    end
+  def email_already_exitst
+    errors.add(:user_email, "already exists") if User.exists?(email: user_email)
   end
 
   # Если есть юзер, выдаем его email,
