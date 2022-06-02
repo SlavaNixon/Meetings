@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
     # Болванка для новой подписки
     @new_subscription = @meeting.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
-    if email_in_db?(subscription_params) && not_owner && @new_subscription.save
+    if @new_subscription.save
       flash[:success] = I18n.t("my.controllers.subscriptions.create")
     else
       flash[:error] = I18n.t("my.controllers.all.error")
@@ -26,14 +26,6 @@ class SubscriptionsController < ApplicationController
   end
 
   private
-  def not_owner
-    @meeting.user != current_user
-  end
-
-  def email_in_db?(params)
-    email = params[:user_email]
-    User.find_by(email: email).nil?
-  end
 
   def set_subscription
     @subscription = @meeting.subscriptions.find(params[:id])
