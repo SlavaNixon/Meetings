@@ -4,7 +4,7 @@ class Meeting < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
   has_many :subscribers, through: :subscriptions, source: :user
-  has_many :photos
+  has_many :photos, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 28 }
   validates :place, presence: true, length: { maximum: 42 }
