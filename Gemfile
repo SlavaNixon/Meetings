@@ -9,6 +9,7 @@ gem 'russian'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog-aws'
 
 gem "font-awesome-rails"
 
