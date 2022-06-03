@@ -2,13 +2,12 @@ class User < ApplicationRecord
   has_many :meeting, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
+  has_one_attached :image
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   validates :nickname, length: { in: 4..21 }, presence: true, uniqueness: true
-
-  mount_uploader :avatar, AvatarUploader
-
+  
   private
 
   def user_name

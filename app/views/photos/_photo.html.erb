@@ -1,4 +1,4 @@
 <div>
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
+  <%= link_to image_tag(photo.photo, height:"200"), photo.photo.url %>
   <p>Добавил: <%= link_to photo.user.nickname, user_path(photo.user) %></p>
 </div>

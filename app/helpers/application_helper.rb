@@ -1,19 +1,30 @@
 module ApplicationHelper
+  #def user_avatar(user)
+  # if user.avatar?
+  #    user.avatar.url
+  #  else
+  #    asset_path('user.png')
+  #  end
+  #end
+
   def user_avatar(user)
-    if user.avatar?
-      user.avatar.url
+    if user.image.attached?
+      user.image
     else
       asset_path('user.png')
     end
   end
 
   def user_thumb_avatar(user)
-    if user.avatar?
-      user.avatar.thumb.url
-    else
-      asset_path('user.png')
-    end
+    user_avatar(user)
   end
+  #def user_thumb_avatar(user)
+  #  if user.avatar?
+  #    user.avatar.thumb.url
+  #  else
+  #    asset_path('user.png')
+  #  end
+  #end
 
   def meeting_photo(meeting)
     if meeting.photos.present?

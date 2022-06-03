@@ -3,7 +3,8 @@
   <div class="mb-2 form-control w-75">
     <div><%= form.label :avatar %></div>
     <div class="mb-2"><%= image_tag(user_thumb_avatar(@user), size: "100x100", class: "rounded-circle") %></div>
-    <div><%= form.file_field :avatar %></div>
+
+    <div><%= form.file_field :image %></div>
   </div>
 
   <%= form.text_field :nickname, placeholder: @user.class.human_attribute_name(:nickname), class: "mb-2 form-control w-75" %>

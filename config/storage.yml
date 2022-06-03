@@ -1,3 +1,11 @@
+yandex:
+  service: S3
+  access_key_id: <%= Rails.application.credentials.dig(:yc, :access_key_id) %>
+  secret_access_key: <%= Rails.application.credentials.dig(:yc, :secret_access_key) %>
+  region: ru-central1
+  bucket: meetings
+  endpoint: 'https://storage.yandexcloud.net'
+
 test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>

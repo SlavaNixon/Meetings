@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(params.require(:user).permit(:nickname, :email, :avatar))
+    if @user.update(params.require(:user).permit(:nickname, :email, :image))
       redirect_to user_path(@user)
     else
       flash[:error] = I18n.t("my.controllers.all.error")

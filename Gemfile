@@ -11,6 +11,9 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
 
+gem "image_processing", ">= 1.2"
+gem "aws-sdk-s3", require: false
+
 gem "font-awesome-rails"
 
 gem "rails", "~> 7.0.3"
