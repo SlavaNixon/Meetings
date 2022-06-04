@@ -1,4 +1,4 @@
-<div>
-  <%= link_to image_tag(photo.photo, height:"200"), photo.photo.url %>
-  <p>Добавил: <%= link_to photo.user.nickname, user_path(photo.user) %></p>
+<div class="mb-3">
+  <%= link_to image_tag(photo.photo, width:"300"), photo.photo %>
+  <div>Добавил: <%= link_to photo.user.nickname, user_path(photo.user) %> <%= button_to fa_icon("trash"), meeting_photo_path(@meeting, photo), class: "btn", method: :delete, form: { data: { 'turbo-confirm': t("my.meetings.show.photo_delete_confirm")  } } if current_user == @user %></div>
 </div>

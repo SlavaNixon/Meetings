@@ -19,7 +19,7 @@
     <h2 class="mt-3"><%= t("my.meetings.show.photos") %></h2>
     <div class="row">
       <div class="col-md-8">
-        <%= render partial: 'photos/photo', collection: @meeting.photos.except(@new_photo) %>
+        <%= render partial: 'photos/photo', collection: @meeting.photos %>
         <% if @meeting.photos.blank? %>
           <h5 class="color-gray">Фотографий пока что нет</h5>
         <% end %>
