@@ -1,6 +1,6 @@
 <div class="row">
   <% meetings.each do |m| %>
-    <div class="container-md col-sm-10 col-md-5 col-lg-5 col-xl-3 col-height mx-3 my-3">
+    <div class="container-md col-sm-10 col-md-5 col-lg-5 col-xl-3 col-height mx-3 my-3 px-0">
       <div style="background-image: url(<%= image_path meeting_photo(m) %>)" class="event-background"></div>
       <%= render 'meetings/text_content', meeting: m %>
     </div>

@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
-  validates :nickname, length: { in: 4..21 }, presence: true, uniqueness: true
+  validates :nickname, length: { in: 4..21 }, presence: true, uniqueness: true, format: /\A[\w\sА-Яа-я]+\z/
   
   private
 

@@ -1,4 +1,6 @@
 class MeetingsController < ApplicationController
+  include ActiveStorage::SetCurrent
+
   before_action :unavailable_request, only: %i[new edit destroy create update]
   before_action :check_current_user, only: %i[edit update destroy]
 
