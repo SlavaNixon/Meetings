@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:error] = I18n.t("my.controllers.all.error")
-      render :edit
+      redirect_to edit_user_path(@user)
     end
   end
 
