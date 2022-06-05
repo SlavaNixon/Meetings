@@ -1,4 +1,4 @@
-<% if meeting&.errors&.any? %>
+<% if meeting.errors.any? %>
   <div class="alert alert-danger alert-dismissible">
     <%= t("my.error",
                count: meeting.errors.count,
