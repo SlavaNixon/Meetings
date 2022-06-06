@@ -1,0 +1,9 @@
+<%= t '.title' %>
+----
+
+<%= t '.author' %>: <%= @photo.user.nickname %>
+
+--------------------------------
+<%= t '.meeting' %>: <%= @meeting.name %>
+<%= t '.datetime' %>: <%= l @meeting.date, format: :long %>
+<%= t '.owner' %>: <%= @meeting.user.nickname %>

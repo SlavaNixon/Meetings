@@ -134,3 +134,10 @@ ru:
       meeting: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+    photo:
+      photo: Фотография
+      title: 'Новая фотография'
+      author: 'Автор'
+      meeting: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
