@@ -1,5 +1,5 @@
 <h1><%= t("my.users.edit.title") %></h1>
-<%= form_with model: @user, url: user_path, method: :patch, data: {turbo: false} do |form| %>
+<%= form_with model: @user, url: user_update(@user), method: :patch, data: {turbo: false} do |form| %>
   <div class="mb-2 form-control w-75">
     <div><%= form.label :avatar %></div>
     <div class="mb-2"><%= image_tag(user_thumb_avatar(@user), size: "100x100", class: "rounded-circle") %></div>

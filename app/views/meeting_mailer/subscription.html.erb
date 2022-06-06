@@ -1,0 +1,10 @@
+<h1><%= t '.title' %></h1>
+<p><%= t '.name' %>: <strong><%= @name %></strong></p>
+<p><%= t '.email' %>: <strong><%= link_to @email, "mailto:#{@email}" %></strong></p>
+<hr/>
+
+<p><strong><%= t '.meeting' %>:</strong> <%= @meeting.name %></p>
+
+<p><strong><%= t '.datetime' %>:</strong> <%= l @meeting.date, format: :long %></p>
+
+<p><strong><%= t '.owner' %>:</strong> <%= @meeting.user.nickname %></p>

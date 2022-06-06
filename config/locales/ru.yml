@@ -117,3 +117,20 @@ ru:
       photos:
         create: Фотография добавлена
         destroy: Фотография удалена
+
+  meeting_mailer:
+    comment:
+      body: Текст
+      title: 'Новый комментарий'
+      author: 'Автор'
+      meeting: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      meeting: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'

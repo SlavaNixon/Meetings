@@ -1,0 +1,11 @@
+<h1><%= t '.title' %></h1>
+<p><strong><%= t '.body' %>:</strong> <%= @comment.body %></p>
+<p><%= t '.author' %>: <strong><%= @comment&.user&.nickname || @comment.user_name %></strong></p>
+
+<hr/>
+
+<p><strong><%= t '.meeting' %>:</strong> <%= @meeting.name %></p>
+
+<p><strong><%= t '.datetime' %>:</strong> <%= l @meeting.date, format: :long %></p>
+
+<p><strong><%= t '.owner' %>:</strong> <%= @meeting.user.nickname %></p>

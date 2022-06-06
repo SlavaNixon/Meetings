@@ -36,3 +36,5 @@
 
 # Ignore user avatars
 /public/uploads
+
+/.env

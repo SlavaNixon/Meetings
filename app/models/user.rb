@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :nickname, length: { in: 4..21 }, presence: true, uniqueness: true, format: /\A[\w\sА-Яа-я]+\z/
   
-  validate :acceptable_image
+  validate :acceptable_image, on: :update_user
 
   private
 

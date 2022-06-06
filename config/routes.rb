@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :photos, only: [:create, :destroy]
   end
 
-  resources :users, only: %i[show edit destroy update]
+  resources :users, only: %i[show edit destroy update] do
+    patch '/update', to: 'users#update_user'
+  end
 
   root "meetings#index"
 end
