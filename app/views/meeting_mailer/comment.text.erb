@@ -3,7 +3,7 @@
 
 <%= @comment.body %>
 
-<%= t '.author' %>: <%= @comment&.user&.nickname || @comment.user_name %>
+<%= t '.author' %>: <%= @comment.user&.nickname || @comment.user_name %>
 
 --------------------------------
 <%= t '.meeting' %>: <%= @meeting.name %>

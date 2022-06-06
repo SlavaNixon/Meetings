@@ -1,10 +1,12 @@
 <h1><%= t '.title' %></h1>
-<p><%= t '.author' %>: <strong><%= @photo.user.nickname %></strong></p>
+<p><%= t '.author' %>: <strong><%= link_to @photo.user.nickname, user_url(@photo.user) %></strong></p>
+
+<%= image_tag @photo.photo %>
 
 <hr/>
 
-<p><strong><%= t '.meeting' %>:</strong> <%= @meeting.name %></p>
+<p><strong><%= t '.meeting' %>:</strong> <%= link_to @meeting.name, meeting_url(@meeting) %></p>
 
 <p><strong><%= t '.datetime' %>:</strong> <%= l @meeting.date, format: :long %></p>
 
-<p><strong><%= t '.owner' %>:</strong> <%= @meeting.user.nickname %></p>
+<p><strong><%= t '.owner' %>:</strong> <%= link_to @meeting.user.nickname, user_url(@meeting.user) %></p>

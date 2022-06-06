@@ -117,6 +117,14 @@ ru:
       photos:
         create: Фотография добавлена
         destroy: Фотография удалена
+    
+    mailers:
+      subscription:
+        subject: Новая подписка на
+      comment:
+        subject: Новый комментарий у события
+      photo:
+        subject: Новая фотография у события
 
   meeting_mailer:
     comment:
