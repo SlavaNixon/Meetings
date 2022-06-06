@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def user_can_delete?(meeting_owner)
+    current_user == @user || current_user == meeting_owner
+  end
 end

@@ -20,7 +20,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    if current_user == @meeting.user || current_user == @photo.user
+    if user_can_delete?(@meeting.user)
       @photo.destroy
       flash[:success] = I18n.t("my.controllers.photos.destroy")
     else
@@ -38,6 +38,7 @@ class PhotosController < ApplicationController
 
   def set_photo
     @photo = @meeting.photos.find(params[:id])
+    @user = @photo.user
   end
 
   def photo_params

@@ -7,7 +7,7 @@
     <% end %>
   </div>
   <div class="col-md-8">
-    <% if current_user == @user %>
+    <% if user_can_delete?(subscription.user) %>
       <%= button_to fa_icon("trash"), meeting_subscription_path(@meeting, subscription), class: "btn", method: :delete, form: { data: { 'turbo-confirm': t("my.subscriptions.delete_confirm") } }%>
     <% end %>
   </div>

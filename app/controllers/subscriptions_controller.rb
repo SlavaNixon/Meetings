@@ -16,7 +16,7 @@ class SubscriptionsController < ApplicationController
   end
   
   def destroy
-    if @meeting.user == current_user
+    if user_can_delete?(@meeting.user)
       @subscription.destroy
       flash[:success] = I18n.t("my.controllers.subscriptions.destroy")
     else
@@ -30,6 +30,7 @@ class SubscriptionsController < ApplicationController
 
   def set_subscription
     @subscription = @meeting.subscriptions.find(params[:id])
+    @user = @subscription.user
   end
 
   def set_meeting

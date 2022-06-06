@@ -1,12 +1,4 @@
 module ApplicationHelper
-  #def user_avatar(user)
-  # if user.avatar?
-  #    user.avatar.url
-  #  else
-  #    asset_path('user.png')
-  #  end
-  #end
-
   def user_avatar(user)
     if user.image.attached?
       user.image
@@ -18,13 +10,6 @@ module ApplicationHelper
   def user_thumb_avatar(user)
     user_avatar(user)
   end
-  #def user_thumb_avatar(user)
-  #  if user.avatar?
-  #    user.avatar.thumb.url
-  #  else
-  #    asset_path('user.png')
-  #  end
-  #end
 
   def meeting_photo(meeting)
     if meeting.photos.present?
@@ -32,5 +17,9 @@ module ApplicationHelper
     else
       asset_path('meet.jpg')
     end
+  end
+
+  def user_can_delete?(meeting_owner)
+    current_user == @user || current_user == meeting_owner
   end
 end
