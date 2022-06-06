@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[show edit destroy update] do
-    patch '/update', to: 'users#update_user'
+    member do
+      patch '/update', to: 'users#update_user'
+    end
   end
 
   root "meetings#index"

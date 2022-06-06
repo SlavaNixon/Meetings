@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   include ActiveStorage::SetCurrent
 
-  before_action :unavailable_request, only: %i[edit update destroy]
-  before_action :check_current_user, only: %i[edit update destroy]
+  before_action :unavailable_request, only: %i[edit update_user destroy]
+  before_action :check_current_user, only: %i[edit update_user destroy]
 
   def show
     @user = User.find(params[:id])
