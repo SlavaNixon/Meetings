@@ -1,5 +1,4 @@
 class PhotosController < ApplicationController
-  before_action :check_current_user, only: %i[:create :destroy]
   before_action :set_meeting, only: [:create, :destroy]
   before_action :set_photo, only: [:destroy]
 
@@ -21,8 +20,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    @user = @meeting.user
-    if current_user == @user
+    if current_user == @meeting.user || current_user == @photo.user
       @photo.destroy
       flash[:success] = I18n.t("my.controllers.photos.destroy")
     else
@@ -49,16 +47,8 @@ class PhotosController < ApplicationController
   def notify_subscribers(event, photo)
     all_emails = event.subscriptions.map(&:user_email) + [event.user.email]
   
-    all_emails.excluding(photo.user&.email).each do |mail|
+    all_emails.excluding(photo.user.email).each do |mail|
       MeetingMailer.photo(event, photo, mail).deliver_now
-    end
-  end
-
-  def check_current_user
-    @user = User.find(params[:id])
-    unless current_user == @user
-      flash[:error] = I18n.t("my.controllers.all.error")
-      redirect_to root_path
     end
   end
 end

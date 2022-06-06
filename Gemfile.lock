@@ -46,6 +46,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_storage_validations (0.9.8)
+      activejob (>= 5.2.0)
+      activemodel (>= 5.2.0)
+      activestorage (>= 5.2.0)
+      activesupport (>= 5.2.0)
     activejob (7.0.3)
       activesupport (= 7.0.3)
       globalid (>= 0.3.6)
@@ -291,6 +296,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  active_storage_validations
   aws-sdk-s3
   bootsnap
   capybara
@@ -304,6 +310,7 @@ DEPENDENCIES
   image_processing (>= 1.2)
   importmap-rails
   jbuilder
+  mini_magick (>= 4.9.5)
   pg
   puma (~> 5.0)
   rails (~> 7.0.3)
