@@ -165,8 +165,6 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jmespath (1.6.1)
-    jsbundling-rails (1.0.2)
-      railties (>= 6.0.0)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -308,7 +306,6 @@ DEPENDENCIES
   font-awesome-rails
   image_processing (>= 1.2)
   jbuilder
-  jsbundling-rails
   mini_magick (>= 4.9.5)
   pg
   puma (~> 5.0)
