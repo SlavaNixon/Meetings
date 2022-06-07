@@ -76,6 +76,7 @@ ru:
       edit:
         title: Редактирование события
         back: Назад к событию
+        submit: Сохранить
       meeting_form:
         submit: Создать
 
