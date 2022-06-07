@@ -25,7 +25,7 @@ gem "sprockets-rails"
 
 gem "puma", "~> 5.0"
 
-gem "importmap-rails"
+gem "jsbundling-rails"
 
 gem "turbo-rails"
 

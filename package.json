@@ -1,0 +1,5 @@
+{
+  "name": "app",
+  "private": "true",
+  "scripts": { "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds" }
+}

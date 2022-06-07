@@ -1,3 +1,17 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://rawgit.com/tempusdominus/bootstrap-4/master/build/js/tempusdominus-bootstrap-4.js"></script>
+<link href="https://rawgit.com/tempusdominus/bootstrap-4/master/build/css/tempusdominus-bootstrap-4.css" rel="stylesheet"/>
+
+<script>
+$(function() {
+   $('#datetimepicker1').datetimepicker({locale: 'ru'});
+ });
+</script>
+
 <h1><%= t("my.meetings.new.title")%></h1>
 <%= render "meetings/meeting_form_new", local_path: meetings_path, request: :post, meeting: @meeting %>
 <%= link_to t("my.meetings.new.back"), root_path %>
+ 
