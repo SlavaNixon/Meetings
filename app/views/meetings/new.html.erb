@@ -12,6 +12,6 @@ $(function() {
 </script>
 
 <h1><%= t("my.meetings.new.title")%></h1>
-<%= render "meetings/meeting_form_new", local_path: meetings_path, request: :post, meeting: @meeting %>
+<%= render "meetings/meeting_form", local_path: meetings_path, request: :post, meeting: Meeting.new %>
 <%= link_to t("my.meetings.new.back"), root_path %>
  
