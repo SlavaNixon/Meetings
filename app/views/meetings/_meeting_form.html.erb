@@ -5,7 +5,7 @@
   <div class ="form-control mb-2 w-75">
     <%= form.label t("activerecord.attributes.meeting.date"), class: "mb-2 w-25" %><br />
     <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-      <%= form.text_field :date, class: "form-control datetimepicker-input", 'data-target':"#datetimepicker1" %>
+      <%= form.text_field :date, value: meeting_form_params[:time], class: "form-control datetimepicker-input", 'data-target':"#datetimepicker1" %>
       <span class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
         <span class="fa fa-calendar pl-3"></span>
       </span>

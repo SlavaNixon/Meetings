@@ -17,7 +17,8 @@ class MeetingsController < ApplicationController
     @meeting_form_params = {
       local_path: meeting_path,
       request: :patch,
-      meeting: @meeting
+      meeting: @meeting,
+      time: helpers.time_format(@meeting.date)
     }
   end
 
@@ -35,7 +36,8 @@ class MeetingsController < ApplicationController
     @meeting_form_params = {
       local_path: meetings_path,
       request: :post,
-      meeting: Meeting.new
+      meeting: Meeting.new,
+      time: helpers.time_format(Time.now)
     }
   end
 
