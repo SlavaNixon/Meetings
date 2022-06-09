@@ -26,6 +26,8 @@ ru:
       errors:
         is_owner: является создателем
         already_exists: уже существует
+        large_size: слишком большой размер
+
     error:
       one: "%{count} ошибки:"
       few: '%{count} ошибки'
@@ -52,6 +54,7 @@ ru:
       join: Войти, если есть аккаунт
       registration: Зарегистрироваться
       forgot_password: Забыли пароль?
+
     application:
       my_profile: Мой профиль
       exit: Выйти
@@ -118,14 +121,6 @@ ru:
       photos:
         create: Фотография добавлена
         destroy: Фотография удалена
-    
-    mailers:
-      subscription:
-        subject: Новая подписка на
-      comment:
-        subject: Новый комментарий у события
-      photo:
-        subject: Новая фотография у события
 
   meeting_mailer:
     comment:
@@ -135,6 +130,7 @@ ru:
       meeting: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      subject: "Новый комментарий у события %{meeting_name}"
     subscription:
       title: 'Новая подписка'
       name: 'Имя'
@@ -143,6 +139,7 @@ ru:
       meeting: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      subject: "Новая подписка на %{meeting_name}"
     photo:
       photo: Фотография
       title: 'Новая фотография'
@@ -150,3 +147,4 @@ ru:
       meeting: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      subject: "Новая фотография у события %{meeting_name}"
