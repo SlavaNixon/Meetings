@@ -23,6 +23,10 @@ class MeetingsController < ApplicationController
   end
 
   def update
+    @meeting_form_params = {
+      local_path: meeting_path,
+      request: :patch,
+    }
     @meeting = Meeting.find(params[:id])
     if @meeting.update(meeting_content)
       redirect_to meeting_path(@meeting)
