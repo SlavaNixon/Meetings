@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
-      notify_subscribers(@meeting, @new_photo)
+      notify_subscribers(@new_photo)
       # Если фотка сохранилась, редиректим на событие с сообщением
       flash[:success] = I18n.t("my.controllers.photos.create")
     else
@@ -45,11 +45,12 @@ class PhotosController < ApplicationController
     params.fetch(:photo, {}).permit(:photo)
   end
 
-  def notify_subscribers(event, photo)
-    all_emails = event.subscriptions.map(&:user_email) + [event.user.email]
+  def notify_subscribers(photo)
+    meeting = photo.meeting
+    all_emails = meeting.subscriptions.map(&:user_email) + [meeting.user.email]
   
     all_emails.excluding(photo.user.email).each do |mail|
-      MeetingMailer.photo(event, photo, mail).deliver_now
+      MeetingMailer.photo(photo, mail).deliver_now
     end
   end
 end

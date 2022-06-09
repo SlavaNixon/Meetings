@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   
     if @new_comment.save
       # Если сохранился, редирект на страницу самого события
-      notify_subscribers(@meeting, @new_comment)
+      notify_subscribers(@new_comment)
       flash[:success] = I18n.t("my.controllers.comments.create")
       redirect_to @meeting
     else
@@ -46,11 +46,12 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body, :user_name)
   end
 
-  def notify_subscribers(event, comment)
-    all_emails = event.subscriptions.map(&:user_email) + [event.user.email]
+  def notify_subscribers(comment)
+    meeting = comment.meeting
+    all_emails = meeting.subscriptions.map(&:user_email) + [meeting.user.email]
   
     all_emails.excluding(comment.user&.email).each do |mail|
-      MeetingMailer.comment(event, comment, mail).deliver_now
+      MeetingMailer.comment(comment, mail).deliver_now
     end
   end
 end

@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
     @new_subscription = @meeting.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
     if @new_subscription.save
-      MeetingMailer.subscription(@meeting, @new_subscription).deliver_now
+      MeetingMailer.subscription(@new_subscription).deliver_now
       flash[:success] = I18n.t("my.controllers.subscriptions.create")
     else
       flash[:error] = I18n.t("my.controllers.all.error")

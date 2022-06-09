@@ -1,23 +1,23 @@
 class MeetingMailer < ApplicationMailer
-  def subscription(meeting, subscription)
+  def subscription(subscription)
     @email = subscription.user_email
     @name = subscription.user_name
-    @meeting = meeting
+    @meeting = subscription.meeting
 
-    mail to: meeting.user.email, subject: "#{t "my.mailers.subscription.subject"} #{meeting.name}"
+    mail to: @meeting.user.email, subject: "#{t "my.mailers.subscription.subject"} #{@meeting.name}"
   end
 
-  def comment(meeting, comment, email)
+  def comment(comment, email)
     @comment = comment
-    @meeting = meeting
+    @meeting = comment.meeting
   
-    mail to: email, subject: "#{t "my.mailers.comment.subject"} #{meeting.name}"
+    mail to: email, subject: "#{t "my.mailers.comment.subject"} #{@meeting.name}"
   end
 
-  def photo(meeting, photo, email)
+  def photo(photo, email)
     @photo = photo
-    @meeting = meeting
+    @meeting = photo.meeting
   
-    mail to: email, subject: "#{t "my.mailers.photo.subject"} #{meeting.name}"
+    mail to: email, subject: "#{t "my.mailers.photo.subject"} #{@meeting.name}"
   end
 end
