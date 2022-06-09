@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bootstrap": "4",
+    "jquery": "2.1.1",
+    "moment": "2.18.1",
+    "tempusdominus-bootstrap-4": "^5.39.2",
+    "tempusdominus-core": "^5.19.3"
+  }
+}
