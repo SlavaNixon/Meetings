@@ -13,6 +13,12 @@ class MeetingsController < ApplicationController
 
   def edit
     @meeting = Meeting.find(params[:id])
+
+    @meeting_form_params = {
+      local_path: meeting_path,
+      request: :patch,
+      meeting: @meeting
+    }
   end
 
   def update
@@ -26,6 +32,11 @@ class MeetingsController < ApplicationController
   end
 
   def new
+    @meeting_form_params = {
+      local_path: meetings_path,
+      request: :post,
+      meeting: Meeting.new
+    }
   end
 
   def create
