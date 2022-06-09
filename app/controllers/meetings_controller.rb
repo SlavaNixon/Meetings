@@ -40,6 +40,10 @@ class MeetingsController < ApplicationController
   end
 
   def create
+    @meeting_form_params = {
+      local_path: meetings_path,
+      request: :post,
+    }
     correct_params = meeting_content
     correct_params[:user] = current_user
     @meeting = Meeting.new(correct_params)
