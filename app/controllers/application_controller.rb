@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_can_delete?(meeting_owner)
-    current_user == @user || current_user == meeting_owner
+    message_owner = @user
+    current_user == message_owner || current_user == meeting_owner
   end
 end

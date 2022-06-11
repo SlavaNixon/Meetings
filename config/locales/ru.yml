@@ -1,6 +1,14 @@
 ru:
   # Перевод моделей
   activerecord:
+    errors:
+      models:
+        photo:
+          attributes:
+            photo:
+              large_size: слишком большой размер
+
+
     # Перевод названия моделей
     models:
       user: Пользователь
