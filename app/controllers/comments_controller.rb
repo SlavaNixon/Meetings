@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @user = @comment.meeting.user
-    if user_can_delete?(@comment.user)
+    if user_can_delete?(@user, @comment.user)
       @comment.destroy!
       flash[:success] = I18n.t("my.controllers.comments.destroy")
     else

@@ -19,7 +19,7 @@ module ApplicationHelper
     end
   end
 
-  def user_can_delete?(meeting_owner)
-    current_user == @user || current_user == meeting_owner
+  def user_can_delete?(message_owner, meeting_owner)
+    current_user == message_owner || current_user == meeting_owner
   end
 end

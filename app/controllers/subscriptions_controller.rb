@@ -16,7 +16,7 @@ class SubscriptionsController < ApplicationController
   end
   
   def destroy
-    if user_can_delete?(@meeting.user)
+    if user_can_delete?(@user, @meeting.user)
       @subscription.destroy
       flash[:success] = I18n.t("my.controllers.subscriptions.destroy")
     else
