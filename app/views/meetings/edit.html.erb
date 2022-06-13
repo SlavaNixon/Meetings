@@ -12,5 +12,5 @@ $(function() {
 </script>
 
 <h1><%= t("my.meetings.edit.title") %></h1>
-<%= render "meetings/meeting_form", meeting_form_params: @meeting_form_params %>
+<%= render "meetings/meeting_form", local_path: meeting_path, request: :patch, meeting: @meeting, time: @time %>
 <%= link_to t("my.meetings.edit.back"), @meeting %>

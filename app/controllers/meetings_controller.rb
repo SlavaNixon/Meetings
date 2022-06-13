@@ -13,20 +13,10 @@ class MeetingsController < ApplicationController
 
   def edit
     @meeting = Meeting.find(params[:id])
-
-    @meeting_form_params = {
-      local_path: meeting_path,
-      request: :patch,
-      meeting: @meeting,
-      time: helpers.time_format(@meeting.date)
-    }
+    @time = helpers.time_format(@meeting.date)
   end
 
   def update
-    @meeting_form_params = {
-      local_path: meeting_path,
-      request: :patch,
-    }
     @meeting = Meeting.find(params[:id])
     if @meeting.update(meeting_content)
       redirect_to meeting_path(@meeting)
@@ -37,19 +27,11 @@ class MeetingsController < ApplicationController
   end
 
   def new
-    @meeting_form_params = {
-      local_path: meetings_path,
-      request: :post,
-      meeting: Meeting.new,
-      time: helpers.time_format(Time.now)
-    }
+    @meeting = Meeting.new
+    @time = helpers.time_format(Time.now)
   end
 
   def create
-    @meeting_form_params = {
-      local_path: meetings_path,
-      request: :post,
-    }
     correct_params = meeting_content
     correct_params[:user] = current_user
     @meeting = Meeting.new(correct_params)
