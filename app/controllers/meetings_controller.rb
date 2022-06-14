@@ -28,7 +28,6 @@ class MeetingsController < ApplicationController
 
   def new
     @meeting = Meeting.new
-    @time = helpers.time_format(Time.now)
   end
 
   def create
