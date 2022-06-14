@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+  helper_method :user_can_delete?
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(
       :account_update,
@@ -15,7 +16,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def user_can_delete?(message_owner, meeting_owner)
-    current_user == message_owner || current_user == meeting_owner
+  def user_can_delete?(entity_owner, meeting_owner)
+    return false if current_user.nil?
+    current_user == entity_owner || current_user == meeting_owner
   end
 end

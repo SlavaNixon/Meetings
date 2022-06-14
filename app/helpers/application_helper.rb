@@ -18,8 +18,4 @@ module ApplicationHelper
       asset_path('meet.jpg')
     end
   end
-
-  def user_can_delete?(message_owner, meeting_owner)
-    current_user == message_owner || current_user == meeting_owner
-  end
 end
