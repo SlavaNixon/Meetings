@@ -4,5 +4,5 @@ class Photo < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :photo, attached: true, content_type: %w[image/jpg image/jpeg image/png], size: {less_than: 2.megabytes}
+  validates :photo, attached: true, content_type: %w[image/jpg image/jpeg image/png], size: { less_than: 2.megabytes }
 end
