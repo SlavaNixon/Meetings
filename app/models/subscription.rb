@@ -7,8 +7,8 @@ class Subscription < ApplicationRecord
 
   validates :user_email, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
 
-  validates :user, uniqueness: {scope: :meeting_id}, if: -> { user.present? }
-  validates :user_email, uniqueness: {scope: :meeting_id}, if: -> { user.present? }
+  validates :user, uniqueness: { scope: :meeting_id }, if: -> { user.present? }
+  validates :user_email, uniqueness: { scope: :meeting_id }, if: -> { user.present? }
 
   validate :user_is_owner, if: -> { user.present? }
   validate :email_already_exitst, unless: -> { user.present? }
