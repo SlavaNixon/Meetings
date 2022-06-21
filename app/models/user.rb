@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :nickname, length: { in: 4..21 }, presence: true, uniqueness: true, format: /\A[\w\sА-Яа-я]+\z/
   
-  validate :acceptable_image, on: :update_user
+  validates :image, attached: true, content_type: %w[image/jpg image/jpeg image/png], size: { less_than: 2.megabytes }
 
   private
 
@@ -17,13 +17,6 @@ class User < ApplicationRecord
       user.name
     else
       super
-    end
-  end
-
-  def acceptable_image
-    acceptable_types = ["image/jpg", "image/jpeg", "image/png"]
-    unless acceptable_types.include?(image.content_type)
-      errors.add(:image, "must be a JPG, JPEG or PNG")
     end
   end
 end
