@@ -24,7 +24,7 @@ Good instruction is [here](https://www.tutorialspoint.com/ruby-on-rails/rails-in
 Use `git clone` in command line being in desired directory.
 
 ```
-$ git clone https://github.com/SlavaNixon/url-shortener .
+$ git clone https://github.com/SlavaNixon/Meetings .
 ```
 
 After clone start `bundle`.
