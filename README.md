@@ -33,6 +33,11 @@ After clone start `bundle`.
 $ bundle
 ```
 
+After use this command for database migrations
+```
+$ bundle exec rails db:migrate
+```
+
 After installing gems you can start local server.
 
 ```
