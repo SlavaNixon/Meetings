@@ -3,6 +3,7 @@
     "air-datepicker": "^3.3.5",
     "esbuild": "^0.17.8",
     "fontawesome-free": "^1.0.4",
+    "fslightbox": "^3.4.1",
     "sweetalert2": "^11.7.2"
   },
   "scripts": {

@@ -1,5 +1,5 @@
 <div class="mb-3">
-  <%= link_to image_tag(photo.photo, width:"300"), photo.photo %>
+  <%= link_to image_tag(photo.photo, width:"300"), photo.photo, data: { fslightbox: "gallery" } %>
   <div>
     Добавил: <%= link_to photo.user.nickname, user_path(photo.user) %> 
     <%= button_to fa_icon("trash"), meeting_photo_path(@meeting, photo), class: "btn btn-sm delete-confirm", method: :delete if user_can_delete?(photo.meeting.user, photo.user) %>

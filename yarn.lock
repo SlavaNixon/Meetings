@@ -150,6 +150,11 @@ fontawesome-free@^1.0.4:
   resolved "https://registry.yarnpkg.com/fontawesome-free/-/fontawesome-free-1.0.4.tgz#c7c499708dabd59eb5dedf232b590a862e05957b"
   integrity sha512-7sX6Lbg2oQiClFFFFitJlKg20h3YTBON6rdmq3uGjNwDo8G6EjF2bfj2OjjcCUmf4OvZCgyHaXfW2JseqissLw==
 
+fslightbox@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/fslightbox/-/fslightbox-3.4.1.tgz#e2bbb6c3b17737c8f0f08fcf2db6d9c04e31ab23"
+  integrity sha512-/YkPP9jCnZMIlPuJPUo10JTCOCntU0vHeIKe0cB5ruR0ss2QCLhzxY5h24grZ2gUsF//0NXik7iGMU05RV/jcg==
+
 sweetalert2@^11.7.2:
   version "11.7.2"
   resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.7.2.tgz#a9a5e7323beeb3283e1dd03af0e1cf460c5af112"
