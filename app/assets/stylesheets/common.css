@@ -1,9 +1,3 @@
-/*
-  *= require_self
-  *= require meeting
-  *= require user
-  *= require font-awesome
-*/
 @media screen and (max-width: 354px){
   html{
       width: 354px;
