@@ -47,6 +47,7 @@ group :development do
   gem "web-console"
   gem "sqlite3", "~> 1.4"
   gem 'foreman'
+  gem "letter_opener"
 end
 
 group :production do
