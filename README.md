@@ -7,9 +7,9 @@
 
 ## About <a name = "about"></a>
 #### English
-This is a [site](http://search-meetings.herokuapp.com/ "click") for creating meetings with friends/colleagues/relatives. It is possible to add comments, subscriptions, photos to meetings. Photos are connected to Yandex Cloud and not created locally. Action Mailer is connected, so if you lose your password, you can restore it via mail. Localization is also widely used, which allows you to add the functionality of the English language in the future.
+This is a site for creating meetings with friends/colleagues/relatives. It is possible to add comments, subscriptions, photos to meetings. Photos are connected to Yandex Cloud and not created locally. Action Mailer is connected, so if you lose your password, you can restore it via mail. Localization is also widely used, which allows you to add the functionality of the English language in the future.
 #### Russian
-Это [сайт](http://search-meetings.herokuapp.com/ "click") для создания встреч с друзьями/коллегами/родными. Есть возможность добавлять к встречам комментарии, подписки, фотографии. Фотографии подключены к Yandex Cloud, а не создаются локально. Подключен Action Mailer, поэтому при утере пароля его можно востановить через почту. Также повсеместно используется локализация, что позволяет добавить функционал английского языка в будущем.
+Это сайт для создания встреч с друзьями/коллегами/родными. Есть возможность добавлять к встречам комментарии, подписки, фотографии. Фотографии подключены к Yandex Cloud, а не создаются локально. Подключен Action Mailer, поэтому при утере пароля его можно востановить через почту. Также повсеместно используется локализация, что позволяет добавить функционал английского языка в будущем.
 
 ## Getting Started <a name = "getting_started"></a>
 The active version of the site where you can try to shorten links is [here](http://search-meetings.herokuapp.com/ "here").
@@ -30,7 +30,7 @@ $ git clone https://github.com/SlavaNixon/Meetings .
 After clone start `bundle`.
 
 ```
-$ bundle
+$ bundle install
 ```
 
 After use this command for database migrations
@@ -38,9 +38,14 @@ After use this command for database migrations
 $ bundle exec rails db:migrate
 ```
 
+Also need install yarn packages
+```
+$ yarn install
+```
+
 After installing gems you can start local server.
 
 ```
-$ bundle exec rails s
+$ bin/dev
 ```
 Now you can open any browser and go to `http://127.0.0.1:3000` to use service.
