@@ -10,7 +10,7 @@
     <% if current_user == @user %>
       <div class="d-flex flex-row">
         <%= link_to t("my.meetings.show.edit"), edit_meeting_path(@meeting), class: "btn btn-success mr-3" %>
-        <%= button_to t("my.meetings.show.delete"), meeting_path(@meeting), class: "btn btn-danger", method: :delete, form: { data: { 'turbo-confirm': t("my.meetings.show.delete_confirm") } } %>
+        <%= button_to t("my.meetings.show.delete"), meeting_path(@meeting), class: "btn btn-danger delete-confirm", method: :delete%>
       </div>
     <% end %>
 

@@ -25,14 +25,14 @@ gem "sprockets-rails"
 
 gem "puma", "~> 5.0"
 
-gem "turbo-rails"
-
 gem "stimulus-rails"
 
 gem "jbuilder"
 
 gem "cssbundling-rails", "~> 1.1"
 gem 'jsbundling-rails'
+
+gem "sass", "~> 3.1"
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 

@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "air-datepicker": "^3.3.5",
-    "esbuild": "^0.17.8"
+    "esbuild": "^0.17.8",
+    "fontawesome-free": "^1.0.4",
+    "sweetalert2": "^11.7.2"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.eot=file --loader:.svg=file --loader:.woff=file --loader:.woff2=file --loader:.ttf=file"
   }
 }

@@ -12,7 +12,7 @@
     </span>
     <em><%= l comment.created_at, format: :short %></em>
     <% if user_can_delete?(comment.meeting.user, comment.user) %>
-      <%= button_to t("my.comments.delete_button"), meeting_comment_path(@meeting, comment), method: :delete, class: "btn btn-danger", method: :delete, form: { data: { 'turbo-confirm': t("my.comments.delete_confirm") } }%>
+      <%= button_to t("my.comments.delete_button"), meeting_comment_path(@meeting, comment), method: :delete, class: "btn btn-danger delete-confirm", method: :delete %>
     <% end %>
   </p>
 </div>
