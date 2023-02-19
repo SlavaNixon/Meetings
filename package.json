@@ -7,6 +7,6 @@
     "sweetalert2": "^11.7.2"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.eot=dataurl --loader:.svg=dataurl --loader:.woff=dataurl --loader:.woff2=dataurl --loader:.ttf=dataurl"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.eot=file --loader:.svg=file --loader:.woff=file --loader:.woff2=file --loader:.ttf=file"
   }
 }
