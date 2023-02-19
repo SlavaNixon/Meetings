@@ -22,10 +22,4 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  database: meetings_render_production
-  encoding: unicode
-  pool: 5
-  url: <%= ENV['DATABASE_URL'] %>
-  username: meetings_render
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: db/development.sqlite3
