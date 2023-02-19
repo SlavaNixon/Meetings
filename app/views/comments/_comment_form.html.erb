@@ -1,6 +1,6 @@
 <div class="form-control mt-2">
 <h4 class="text-center"><%= t("my.comments.create") %></h4>
-<%= form_with model: Comment, url: meeting_comments_path(@meeting), method: :post, data: {turbo: false} do |form| %>
+<%= form_with model: Comment, url: meeting_comments_path(@meeting), method: :post do |form| %>
   <% unless user_signed_in? %>
     <%= form.text_field :user_name, placeholder: t("activerecord.attributes.user.nickname"), value: "", class: "mb-2 form-control w-100" %>
   <% end %>

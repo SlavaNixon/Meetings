@@ -1,7 +1,7 @@
 <div class="ml-5">
   <h2><%= t "my.sessions.new.title" %></h2>
   <div class = "form-group">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+    <%= form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
       <div class="field">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t("activerecord.attributes.user.email"), class: "mb-2 form-control w-75" %>
       </div>
