@@ -4,9 +4,11 @@
     "esbuild": "^0.17.8",
     "fontawesome-free": "^1.0.4",
     "fslightbox": "^3.4.1",
+    "sass": "^1.58.3",
     "sweetalert2": "^11.7.2"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.eot=dataurl --loader:.svg=dataurl --loader:.woff=dataurl --loader:.woff2=dataurl --loader:.ttf=dataurl"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.eot=dataurl --loader:.svg=dataurl --loader:.woff=dataurl --loader:.woff2=dataurl --loader:.ttf=dataurl",
+    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/_application.css --no-source-map --load-path=node_modules"
   }
 }
