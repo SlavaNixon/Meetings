@@ -23,8 +23,9 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  encoding: unicode
   database: meetings_render_production
+  encoding: unicode
   pool: 5
+  url: <%= ENV['DATABASE_URL'] %>
   username: meetings_render
-  password: <%= ENV['MY_APP_RENDER_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
