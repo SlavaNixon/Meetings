@@ -23,9 +23,9 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: meetings_render_production
+  database: <%= ENV['DATABASE_NAME'] %>
   encoding: unicode
   pool: 5
   url: <%= ENV['DATABASE_URL'] %>
-  username: meetings_render
+  username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
